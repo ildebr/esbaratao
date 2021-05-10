@@ -34,22 +34,62 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+header.esbaratao {
+  position: fixed;
+  z-index: 100;
+  height: 40px;
+  width: 100%;
+  top: 0;
+  background-color: #5d7b61;
+}
+header.esbaratao div.header-esbaratao-contenido h1.nombre-pagina {
+  color: white;
+  margin: 0 15px;
+}
+
 .fit-window {
   width: 100%;
   height: 100vh;
 }
 
-header div.title {
+.mitad {
+  height: 50%;
+}
+
+header.inicio div.header-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header.inicio div.header-content div.title {
+  text-align: center;
   padding: 5% 10%;
   font-family: "Montserrat-Bold", sans-serif;
+  display: flex;
+  align-items: center;
 }
-header div.title h1 {
+header.inicio div.header-content div.title h1 {
   font-size: 2em;
   color: #5d7b61;
+}
+header.inicio div.header-content div.header-pic img {
+  max-height: 90%;
 }
 
 div.container {
   background-color: #fee4e5;
+}
+
+/* Estilo para los botones */
+button.cta-button {
+  margin-top: 10px;
+  font-size: 1.3em;
+  padding: 10px;
+  border: none;
+  background-color: #5d7b61;
+  color: #e6bdba;
 }
 
 div.content {
@@ -122,10 +162,32 @@ div.content footer div.creditos p {
   color: #999;
 }
 
-i.svgfoto {
-  background: url(../img/facebook.svg);
-  height: 100px;
-  width: 100px;
+section.prenda {
+  width: 100%;
+}
+section.prenda div.interior-prenda {
+  width: 100%;
+  /* centra los objetos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section.prenda div.interior-prenda div.prenda-item {
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fee4e5;
+  text-align: center;
+  max-width: 300px;
+}
+section.prenda div.interior-prenda div.prenda-item div.prenda-item-imagen img.item-img {
+  max-width: 250px;
+  max-height: 200px;
+}
+section.prenda div.interior-prenda div.prenda-item div.prenda-texto {
+  text-align: initial;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 600px) {
@@ -139,16 +201,64 @@ i.svgfoto {
   div.content section.sobre {
     padding: 110px 25px;
   }
+
+  section.prenda div.interior-prenda {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 @media screen and (min-width: 782px) {
+  .mitad {
+    height: auto;
+    width: 50%;
+  }
+
+  header.inicio {
+    display: flex;
+    justify-content: center;
+  }
+  header.inicio div.header-content {
+    flex-direction: row;
+    max-width: 1024px;
+  }
+  header.inicio div.header-content div.title {
+    max-width: 950px;
+    font-size: 1.5em;
+    padding: 0;
+    width: 60%;
+  }
+  header.inicio div.header-content .header-pic {
+    text-align: center;
+    width: 40%;
+  }
+  header.inicio div.header-content .header-pic img {
+    max-height: auto;
+    max-width: 80%;
+  }
+
   div.content section.sobre .anchura {
     max-width: 780px;
     margin: 0 auto;
   }
+}
+div.tijeras-probador {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+  top: 20px;
+}
+div.tijeras-probador svg {
+  transition: 0.8s ease;
+  left: 0px;
+  width: 60px;
+}
 
-  header div.title {
-    max-width: 950px;
-    font-size: 1.5em;
+@media screen and (max-height: 500px) {
+  header.inicio {
+    height: 500px !important;
   }
 }
 
