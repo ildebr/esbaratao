@@ -1,3 +1,4 @@
+/* colores */
 *, html {
   margin: 0;
   padding: 0;
@@ -32,7 +33,7 @@
   position: relative;
 }
 
-div.titulo {
+div.titulo, div.nombre {
   font-size: 1.2em;
   padding: 10px 0;
   font-family: "Cocogoose", sans-serif;
@@ -43,9 +44,32 @@ div.titulo {
 div.container {
   width: 100%;
 }
+div.container div.links {
+  display: none;
+  position: fixed;
+  top: 56px;
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+  z-index: 1;
+}
+div.container div.links div.links-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 86px);
+  justify-content: space-evenly;
+}
+div.container div.links div.links-container ul a {
+  font-family: "Lemon-Milk", sans-serif;
+  font-size: 1.4em;
+  text-decoration: none;
+}
 div.container nav.esbaratao-nav {
   background-color: white;
-  box-shadow: 0px 2px 16px #676767;
+  box-shadow: 0px 2px 8px #676767;
   height: 56px;
   width: 100%;
   display: flex;
@@ -63,7 +87,6 @@ div.container nav.esbaratao-nav div.barras {
 }
 div.container nav.esbaratao-nav div.barras svg {
   height: 20px;
-  fill: #767676;
 }
 div.container nav.esbaratao-nav div.logo {
   font-family: "Cocogoose", sans-serif;
@@ -117,6 +140,7 @@ div.container section.articulos-container div.articulos-interno {
   margin: 0 auto;
   max-width: 534px;
   padding: 15px;
+  max-width: 1090px;
 }
 div.container section.articulos-container div.articulos-interno div.titulo {
   font-size: 1.2em;
@@ -132,7 +156,7 @@ div.container section.articulos-container div.articulos-interno div.articulos {
   flex-wrap: wrap;
 }
 div.container section.articulos-container div.articulos-interno div.articulos div.articulo {
-  min-width: 350px;
+  min-width: 250px;
   width: 75%;
 }
 div.container section.articulos-container div.articulos-interno div.articulos div.articulo div.imagen {
@@ -200,6 +224,116 @@ div.container section.eventos-container div.eventos-interno div.eventos div.even
 }
 div.container section.eventos-container div.eventos-interno div.eventos div.evento div.cta a:hover {
   background-color: rgba(50, 50, 50, 0.1000000015);
+}
+div.container section.equipo-container {
+  width: 100%;
+  margin-top: 56px;
+}
+div.container section.equipo-container div.equipo-interno {
+  padding: 15px;
+}
+div.container section.equipo-container div.equipo-interno {
+  margin: 0 auto;
+  padding: 15px;
+}
+div.container section.equipo-container div.equipo-interno div.titulo {
+  font-size: 1.2em;
+  padding: 10px 0;
+  font-family: "Cocogoose", sans-serif;
+  color: #37474f;
+  margin-bottom: 1em;
+}
+div.container section.equipo-container div.equipo-interno div.equipo {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+div.container section.equipo-container div.equipo-interno div.equipo div.miembro {
+  width: 80%;
+  margin-bottom: 35px;
+}
+div.container section.equipo-container div.equipo-interno div.equipo div.miembro div.imagen {
+  background-color: red;
+  position: relative;
+  padding-top: 100%;
+  background-size: 100%;
+}
+div.container section.equipo-container div.equipo-interno div.equipo div.miembro div.nombre {
+  font-size: 1em;
+  text-align: center;
+  padding-bottom: 0.3em;
+  margin-bottom: 0em;
+}
+div.container section.equipo-container div.equipo-interno div.equipo div.miembro div.descripcion {
+  text-align: center;
+  font-family: "Cocogoose", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+}
+
+@media only screen and (min-width: 600px) and (orientation: landscape) {
+  div.container section.articulos-container div.articulos-interno {
+    max-width: 100%;
+  }
+  div.container section.articulos-container div.articulos-interno div.articulos div.articulo {
+    width: 42%;
+  }
+
+  div.container section.equipo-container div.equipo-interno div.equipo div.miembro {
+    width: 43%;
+  }
+}
+@media only screen and (min-width: 990px) {
+  div.container section.articulos-container div.articulos-interno {
+    max-width: 1090px;
+  }
+  div.container section.articulos-container div.articulos-interno div.articulos div.articulo {
+    width: 30%;
+  }
+
+  div.container section.eventos-container div.eventos-interno {
+    max-width: 1090px;
+  }
+  div.container section.eventos-container div.eventos-interno div.eventos div.evento {
+    width: 44%;
+  }
+
+  div.container section.equipo-container div.equipo-interno div.equipo div.miembro {
+    width: 30%;
+  }
+
+  div.container section.equipo-container div.equipo-interno {
+    max-width: 1090px;
+  }
+}
+svg#barra-navegacion, svg#barra-navegacion-x {
+  animation: 1s ease;
+}
+
+svg rect#inferior, rect#superior, rect#medio {
+  fill: #0a2421;
+}
+
+.overf {
+  overflow: hidden;
+}
+
+.oculto {
+  display: none;
+}
+
+.mostrar {
+  display: block !important;
+}
+
+/* version vieja donde la barra es animada */
+.cambioinferior {
+  transform: rotate(-45deg) translate(-248px, -30px);
+}
+
+.cambiosuperior {
+  transform: rotate(45deg) translate(120px, -70px);
 }
 
 /*# sourceMappingURL=style.css.map */
